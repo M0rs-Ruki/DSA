@@ -31,3 +31,59 @@ using namespace std;
 //         return false;
 //     }
 // };
+
+
+
+// class Solution {
+// public:
+//     bool isPalindrome(string s) {
+//         // Step 1: Clean the string
+//         string orig = "";
+//         // Filter only alphanumeric and lowercase everything
+//         for (char c : s) {
+//             if (isalnum(c)) {
+//                 orig += tolower(c);
+//             }
+//         }
+
+//         int start = 0;
+//         int end = orig.size() -1;
+//         while (start < end) {
+//             if(orig[start] == orig[end]){
+//                 start++;
+//                 end--;
+//             } else{
+//                 return false;
+//             }
+//         }
+//         return true;
+//     }
+// };
+
+
+
+class Solution {
+public:
+    bool isPalindrome(string s) {
+
+        int start = 0;
+        int end = s.size() -1;
+        while (start < end) {
+
+            if(!isalnum(s[start])){
+                start++;
+                continue;
+            } if(!isalnum(s[end])) {
+                end--;
+                continue;
+            }
+
+            if(tolower(s[start]) != tolower(s[end])){
+                return false;
+            }
+            start++;
+            end--;
+        }
+        return true;
+    }
+};
