@@ -31,12 +31,52 @@ public:
     vector<int> twoSum(vector<int>& arr, int target) {
         int n = arr.size();
         for (int i = 0; i < n; i++) {
-            for(int j = i+1; j < n; j++) {
+            for (int j = i+1; j < n; j++) {
                 if(arr[i] + arr[j] == target) {
                     return {i,j};
-                }
+                };
+            };
+        };
+        return {};
+    }
+};
+
+// 2 pointer
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& arr, int target) {
+        vector<pair<int, int>> orig;
+
+        for (int i = 0; i < arr.size(); ++i) {
+            orig.push_back({arr[i], i});
+        }
+        sort(orig.begin(), orig.end());
+
+        int st = 0;
+        int end = arr.size() - 1;
+
+        while (st < end) {
+            int sum = orig[st].first + orig[end].first;
+
+            if (sum == target) {
+                return {orig[st].second, orig[end].second};
+            } else if (sum < target) {
+                st++;
+            } else {
+                end--;
             }
         }
-        return{};
+        return {};
+    }
+};
+
+
+// Hashing
+
+class Solution {
+public:
+    vector<int> twoSum(vector<int>& arr, int target) {
+        
     }
 };
