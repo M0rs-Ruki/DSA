@@ -1,7 +1,11 @@
+
+// 1 Two_Sum 
+
 #include <iostream>
 #include <vector>
 #include <algorithm>
 #include <climits>
+#include <unordered_map>
 using namespace std;
 
 // class Solution {
@@ -26,50 +30,50 @@ using namespace std;
 // Output: [0,1]
 
 
-class Solution {
-public:
-    vector<int> twoSum(vector<int>& arr, int target) {
-        int n = arr.size();
-        for (int i = 0; i < n; i++) {
-            for (int j = i+1; j < n; j++) {
-                if(arr[i] + arr[j] == target) {
-                    return {i,j};
-                };
-            };
-        };
-        return {};
-    }
-};
+// class Solution {
+// public:
+//     vector<int> twoSum(vector<int>& arr, int target) {
+//         int n = arr.size();
+//         for (int i = 0; i < n; i++) {
+//             for (int j = i+1; j < n; j++) {
+//                 if(arr[i] + arr[j] == target) {
+//                     return {i,j};
+//                 };
+//             };
+//         };
+//         return {};
+//     }
+// };
 
 // 2 pointer
 
-class Solution {
-public:
-    vector<int> twoSum(vector<int>& arr, int target) {
-        vector<pair<int, int>> orig;
+// class Solution {
+// public:
+//     vector<int> twoSum(vector<int>& arr, int target) {
+//         vector<pair<int, int>> orig;
 
-        for (int i = 0; i < arr.size(); ++i) {
-            orig.push_back({arr[i], i});
-        }
-        sort(orig.begin(), orig.end());
+//         for (int i = 0; i < arr.size(); ++i) {
+//             orig.push_back({arr[i], i});
+//         }
+//         sort(orig.begin(), orig.end());
 
-        int st = 0;
-        int end = arr.size() - 1;
+//         int st = 0;
+//         int end = arr.size() - 1;
 
-        while (st < end) {
-            int sum = orig[st].first + orig[end].first;
+//         while (st < end) {
+//             int sum = orig[st].first + orig[end].first;
 
-            if (sum == target) {
-                return {orig[st].second, orig[end].second};
-            } else if (sum < target) {
-                st++;
-            } else {
-                end--;
-            }
-        }
-        return {};
-    }
-};
+//             if (sum == target) {
+//                 return {orig[st].second, orig[end].second};
+//             } else if (sum < target) {
+//                 st++;
+//             } else {
+//                 end--;
+//             }
+//         }
+//         return {};
+//     }
+// };
 
 
 // Hashing
@@ -77,6 +81,20 @@ public:
 class Solution {
 public:
     vector<int> twoSum(vector<int>& arr, int target) {
-        
+        unordered_map<int, int>myMap;
+        vector<int> ans;
+        for (int i = 0; i < arr.size(); i++) {
+            int fir = arr[i];
+            int sec = target - fir;
+
+            if (myMap.find(sec)!= myMap.end()) {
+                ans.push_back(i);
+                ans.push_back(myMap[sec]);
+                break;
+            };
+            myMap[fir] = i;
+
+        }
+        return ans;
     }
 };
