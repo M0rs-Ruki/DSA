@@ -48,8 +48,6 @@ public:
             } else {
                 right--;
             }
-
-            // arr[left] < arr[right] ? left++ : right--;
         }
         return maxWa;
     }
