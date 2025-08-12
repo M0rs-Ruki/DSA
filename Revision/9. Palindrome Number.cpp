@@ -24,3 +24,32 @@ public:
         
     }
 };
+
+
+
+// 2 pointer
+class Solution {
+public:
+    bool isPalindrome(int x) {
+        if (x < 0) return false;
+        if (x == 0) return true;
+
+        vector<int> arr;
+        int num = x;
+        while (num > 0) {
+            arr.push_back(num % 10);
+            num /= 10;
+        }
+
+        int st = 0;
+        int end = arr.size() - 1;
+
+        while (st < end) {
+            if (arr[st] != arr[end]) return false;
+            st++;
+            end--;
+        }
+        return true;
+    }
+
+};
