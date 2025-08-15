@@ -68,17 +68,18 @@ This repository serves as my personal journey through the fascinating world of a
 │   ├── 📄 problem1.cpp
 │   ├── 📄 problem2.cpp
 │   ├── 📄 problem3.cpp
-│   └── 📝 notes.md
 ├── 📁 Array/
 │   ├── 📄 problem1.cpp
 │   ├── 📄 problem2.cpp
 │   ├── 📄 problem3.cpp
-│   └── 📝 notes.md
+├── 📁 Note/
+│   ├── 📄 Binary Search.md
+│   ├── 📄 Two-Pointer Approach.md
+│   ├── 📄 etc...md
 ├── 📁 Number/
 │   ├── 📄 problem1.cpp
 │   ├── 📄 problem2.cpp
 │   ├── 📄 problem3.cpp
-│   └── 📝 notes.md
 ├── 📁 output/
 │   ├── 📄 execution-results.txt
 │   ├── 📄 test-outputs.log
@@ -87,12 +88,10 @@ This repository serves as my personal journey through the fascinating world of a
 │   ├── 📄 problem1.cpp (revised problems)
 │   ├── 📄 problem2.cpp
 │   ├── 📄 renewed.md
-│   └── 📝 notes.md
 ├── 📁 String/
 │   ├── 📄 problem1.cpp
 │   ├── 📄 problem2.cpp
 │   ├── 📄 problem3.cpp
-│   └── 📝 notes.md
 ├── 📄 .gitignore
 └── 📄 README.md
 ```
