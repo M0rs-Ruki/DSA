@@ -29,7 +29,6 @@ public:
     }
 };
 
-
 // Binary search
 
 class Solution {
